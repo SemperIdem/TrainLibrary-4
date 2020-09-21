@@ -1,1 +1,3 @@
-console.log('Hello!');
+import $ from './lib/lib';
+
+$('.active').toggle().toggle();

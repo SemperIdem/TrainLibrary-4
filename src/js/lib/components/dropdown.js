@@ -1,0 +1,15 @@
+import $ from '../core';
+
+$.prototype.dropdown = function() {
+    for (let i = 0; i < this.length; i++) {
+        const id = this[i].getAttribute('id');
+        $(this[i]).onClick(() => {
+            console.log('test');
+            console.log(id);
+            console.log($(`[data-toggle-id="${id}]"`));
+            $(`[data-toggle-id="${id}"]`).fadeToggle(300);
+        });
+    }
+};
+
+$('.dropdown-toggle').dropdown();

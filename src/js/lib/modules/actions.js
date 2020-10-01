@@ -93,7 +93,7 @@ $.prototype.siblings = function() {
         const arr = copyObj[i].parentNode.children;
 
         for (let j = 0; j < arr.length; j++) {
-            if (copyObj[i === arr[j]]) {
+            if (copyObj[i] === arr[j]) {
                 continue;
             }
 
@@ -106,8 +106,15 @@ $.prototype.siblings = function() {
     this.length = numberOfItems;
     const objLenght = Object.keys(this).length;
     for (; numberOfItems < objLenght; numberOfItems++) {
+        if (this[numberOfItems]) {
+        console.log(this[numberOfItems].classList);
+        }
         delete this[numberOfItems];
     }
 
+    //console.log("siblings " + this.length);
+    // for (let i = 0; i < this.length; i++) {
+    //     console.log("sib " + this[i].classList);
+    // }
     return this;
 };
